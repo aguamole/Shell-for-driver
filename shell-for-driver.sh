@@ -47,7 +47,7 @@ if lsmod | grep nvidia; then 	# Detecta se o driver Nvidia esta ativo
 	sleep 10; echo "Saindo..."; exit
 fi
 if lsmod | grep nouveau; then	# Detecta se o driver nouveau esta ativo e desativa.
-	echo -e "# Gerado pelo script driver.sh\nblacklist nouveau\noptions nouveau modeset=0" > /etc/modprobe.d/blacklist-nouveau.conf
+	echo -e "# Gerado pelo script shell-for-driver.sh\nblacklist nouveau\noptions nouveau modeset=0" > /etc/modprobe.d/blacklist-nouveau.conf
 	update-initramfs -u
 	echo -e "O sistema sera reiniciado em 10 seg...\napós reinicio iniciar novamente o script.\nCtrl+C para cancelar !"
 	sleep 10
