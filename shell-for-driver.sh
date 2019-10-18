@@ -34,15 +34,15 @@ do
 done
 #-------------------------------------#
 echo -e "\033[0;32m
-      _        _                         _     
-     | |      (_)                       | |    
-   __| | _ __  _ __   __ ___  _ __  ___ | |__  
-  / _  ||  __|| |\ \ / // _ \|  __|/ __||  _ \ 
+      _        _                         _
+     | |      (_)                       | |
+   __| | _ __  _ __   __ ___  _ __  ___ | |__
+  / _  ||  __|| |\ \ / // _ \|  __|/ __||  _ \
  | (_| || |   | | \ V /|  __/| | _ \__ \| | | |
   \__ _||_|   |_|  \_/  \___||_|(_)|___/|_| |_|
 \033[0;34mVersion: 1\033[m
 "
-if lsmod | grep nvidia; then 	# Detecta se o driver Nvidia esta ativo
+if lsmod | grep nvidia; then	# Detecta se o driver Nvidia esta ativo
 	echo -e "\033[32mO driver da Nvidia foi detectado e já esta carregado.\033[m"
 	sleep 10; echo "Saindo..."; exit
 fi
@@ -53,7 +53,7 @@ if lsmod | grep nouveau; then	# Detecta se o driver nouveau esta ativo e desativ
 	sleep 10
 	systemctl -i reboot
 fi
-echo -e " 
+echo -e "
 \033[0;31mATENÇÃO\033[m\n---> Este script deve ser executado no terminal\npara acessar o terminal use as teclas Ctrl+Alt+F1.\nO computador precisa reiniciar e você tera\nque iniciar o script varias vezes ate terminar a instalação !\n
 "
 read -p "Pressione [Enter] para continuar ou CTRL+C para sair..."
@@ -74,7 +74,7 @@ else
 	echo -e "\033[0;31mFalha não foi possível detectar o Direct Manager.\nRever linhas 61 a 76.\033[m"
 	exit
 fi
-bash $instalador -q	# Inicia o instalador
+bash $instalador -q	# Inicia o instalador com a opção de não questionar habilitada, Assume yes.
 echo -e "O sistema sera reiniciado em 10 seg...\nCtrl+C para cancelar !"
 sleep 10
 systemctl -i reboot
