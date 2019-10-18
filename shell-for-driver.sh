@@ -74,7 +74,7 @@ else
 	echo -e "\033[0;31mFalha não foi possível detectar o Direct Manager.\nRever linhas 61 a 76.\033[m"
 	exit
 fi
-bash $instalador	# Inicia o instalador
+bash $instalador -q	# Inicia o instalador
 echo -e "O sistema sera reiniciado em 10 seg...\nCtrl+C para cancelar !"
 sleep 10
 systemctl -i reboot
